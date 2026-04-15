@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int A[2][2], B[2][2], C[2][2];
+
+    cout << "Masukkan elemen matriks A (2x2):\n";
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            cin >> A[i][j];
+        }
+    }
+
+    cout << "Masukkan elemen matriks B (2x2):\n";
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            cin >> B[i][j];
+        }
+    }
+
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            C[i][j] = 0;
+            for (int k = 0; k < 2; k++)
+            {
+                C[i][j] = C[i][j] + (A[i][k] * B[k][j]);
+            }
+        }
+    }
+
+    cout << "Hasil perkalian matriks AB: \n";
+    for (int i = 0; i < 2; i++)
+    {
+        cout << C[i][0] << " " << C[i][1] << endl;
+    }
+
+    return 0;
+}
